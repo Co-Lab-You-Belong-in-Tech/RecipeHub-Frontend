@@ -4,7 +4,7 @@ import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // import ContactPage from './pages/contactPage';
 // import Login from './pages/loginPage';
 import HomePageContent from './components/homePageContent';
-// import SignUp from './pages/signUpPage';
+import SignUpForm from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
 import './components/App.css';
 // import { FormspreeProvider } from '@formspree/react';
@@ -54,7 +54,7 @@ function App({ ContactPage, pageProps }) {
           />
           <Route
             path='/Sign Up Today!'
-            // render={() => <SignUp title={currentState.signup.title} />}
+            render={() => <SignUpForm title={currentState.signup.title} />}
           />
           <Route
             path='/Login'
