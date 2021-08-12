@@ -22,6 +22,7 @@ function ContactForm() {
       }}
       action='https://formspree.io/f/mleaoeqy'
       method='post'
+      header='Access-Control-Origin'
     >
       <label htmlFor='email'>Email Address</label>
       <input id='email' type='email' name='email' />
