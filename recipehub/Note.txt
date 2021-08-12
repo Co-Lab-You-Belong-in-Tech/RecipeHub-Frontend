@@ -1,2 +1,0 @@
-I will be creating a url submission and doing a request to get the body. 
-This test will see if we can get the full functionality of the application RecipeHub.
