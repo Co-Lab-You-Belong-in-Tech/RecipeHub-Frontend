@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // import ContactPage from './pages/contactPage';
 import Login from './pages/loginPage';
+import Footer from './components/footer';
 import HomePageContent from './components/homePageContent';
 import SignUpForm from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
@@ -61,7 +62,7 @@ function App({ ContactPage, pageProps }) {
             path='/login'
             render={() => <Login title={currentState.login.title} />}
           />
-          {/* <Footer /> */}
+          <Footer />
         </Container>
       </Router>
     </Switch>
