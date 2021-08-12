@@ -53,7 +53,7 @@ function App({ ContactPage, pageProps }) {
             // render={() => <ContactPage title={currentState.contact.title} text={currentState.contact.text} />}
           />
           <Route
-            path='/Sign Up Today!'
+            path='/signup'
             render={() => <SignUpForm title={currentState.signup.title} />}
           />
           <Route

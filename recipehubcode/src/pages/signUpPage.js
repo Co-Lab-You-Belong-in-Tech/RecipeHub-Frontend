@@ -89,7 +89,7 @@ const SignUpForm = () => {
           className='card-title'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <h3 className='page-title'>Register</h3>
+          <h3 className='page-title'>Sign Up Today!</h3>
         </div>
         <form
           onSubmit={submitHandler}
