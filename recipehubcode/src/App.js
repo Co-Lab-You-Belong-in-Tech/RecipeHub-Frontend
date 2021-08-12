@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // import ContactPage from './pages/contactPage';
-// import Login from './pages/loginPage';
+import Login from './pages/loginPage';
 import HomePageContent from './components/homePageContent';
 import SignUpForm from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
@@ -10,7 +10,8 @@ import './components/App.css';
 // import { FormspreeProvider } from '@formspree/react';
 
 function App({ ContactPage, pageProps }) {
-  // const [loggedIn, setLoggedIn] = useState(false);
+  //eslint-disable-next-line
+  const [loggedIn, setLoggedIn] = useState(false);
 
   //eslint-disable-next-line
   const [currentState, setCurrentState] = useState({ ...curRentState });
@@ -57,8 +58,8 @@ function App({ ContactPage, pageProps }) {
             render={() => <SignUpForm title={currentState.signup.title} />}
           />
           <Route
-            path='/Login'
-            // render={() => <Login title={currentState.login.title} />}
+            path='/login'
+            render={() => <Login title={currentState.login.title} />}
           />
           {/* <Footer /> */}
         </Container>
