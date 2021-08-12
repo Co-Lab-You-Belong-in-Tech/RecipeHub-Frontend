@@ -23,6 +23,7 @@ function App({ ContactPage, pageProps }) {
         <Container className='p-0' fluid={true}>
           <Navbar className='border-bottom' bg='transparent' expand='lg'>
             <Navbar.Brand>RecipeHub</Navbar.Brand>
+            <Navbar.Toggle className='border-0' aria-controls='navbar-toggle' />
             <Navbar.Collapse id='navbar-toggle'>
               <Nav className='ml-auto'>
                 <Link className='nav-link' to='/'>
