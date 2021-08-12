@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-// import ContactPage from './pages/contactPage';
+import ContactForm from './pages/contactPage';
 import Login from './pages/loginPage';
 import Footer from './components/footer';
 import HomePageContent from './components/homePageContent';
@@ -52,8 +52,13 @@ function App({ ContactPage, pageProps }) {
             )}
           />
           <Route
-            path='/Contact'
-            // render={() => <ContactPage title={currentState.contact.title} text={currentState.contact.text} />}
+            path='/contact'
+            render={() => (
+              <ContactForm
+                title={currentState.contact.title}
+                text={currentState.contact.text}
+              />
+            )}
           />
           <Route
             path='/signup'
