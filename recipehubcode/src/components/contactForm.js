@@ -20,6 +20,8 @@ function ContactForm() {
         padding: '5px',
         boxShadow: '2px 2px grey',
       }}
+      action='https://formspree.io/f/mleaoeqy'
+      method='post'
     >
       <label htmlFor='email'>Email Address</label>
       <input id='email' type='email' name='email' />
