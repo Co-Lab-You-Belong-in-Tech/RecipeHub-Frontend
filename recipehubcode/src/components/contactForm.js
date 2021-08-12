@@ -2,15 +2,13 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm('contactForm');
+  const [state, handleSubmit] = useForm('https://formspree.io/f/mleaoeqy');
   if (state.succeeded) {
     return <p>Thanks for contacting RecipeHub!</p>;
   }
   return (
     <form
       onSubmit={handleSubmit}
-      action='https://formspree.io/f/mleaoeqy'
-      method='POST'
       style={{
         display: 'flex',
         margin: 'auto',
