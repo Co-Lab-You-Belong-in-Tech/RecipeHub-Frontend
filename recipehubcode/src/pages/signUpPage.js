@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const initialForm = {
   registration_id: uuid(),
+  howTheyFoundRecipeHub: '',
   first_name: '',
   last_name: '',
   username: '',
@@ -26,9 +27,6 @@ const SignUpForm = () => {
   // It's only responsibility is handling the submit
   const submitHandler = (event) => {
     event.preventDefault();
-    // eslint-disable-next-line
-    const { first_name, last_name, username, email, password, password_match } =
-      registrationForm;
     post();
   };
 
@@ -44,6 +42,7 @@ const SignUpForm = () => {
       alert(`You're Email and Password Matches!`);
       const {
         registration_id,
+        howTheyFoundRecipeHub,
         username,
         first_name,
         last_name,
@@ -54,6 +53,7 @@ const SignUpForm = () => {
         .post('http://localhost:5000/registration', {
           data: {
             registration_id: registration_id,
+            howTheyFoundRecipeHub: howTheyFoundRecipeHub,
             username: username,
             first_name: first_name,
             last_name: last_name,
@@ -96,6 +96,22 @@ const SignUpForm = () => {
           className='card-body'
           style={{ color: '#fff' }}
         >
+          <label
+            htmlFor='howTheyFoundRecipeHub'
+            className='d-block'
+            style={{ color: 'black' }}
+          >
+            How did you find out about RecipeHub?
+          </label>
+          <input
+            name='howTheyFoundRecipeHub'
+            type='text'
+            id='howTheyFoundRecipeHub'
+            required
+            onChange={handleChange}
+            value={registrationForm.howTheyFoundRecipeHub}
+            style={{ width: '500px', marginBottom: '5px' }}
+          />
           <label
             htmlFor='first_name'
             className='d-block'
