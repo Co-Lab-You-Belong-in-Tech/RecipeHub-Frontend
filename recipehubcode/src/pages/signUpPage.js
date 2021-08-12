@@ -84,7 +84,7 @@ const SignUpForm = () => {
         justifyContent: 'center',
       }}
     >
-      <div className='p-3 rounded' style={{ border: '2px solid #42fcfc' }}>
+      <div className='p-3 rounded' style={{ border: '2px solid blue' }}>
         <div
           className='card-title'
           style={{ display: 'flex', justifyContent: 'center' }}
@@ -96,7 +96,11 @@ const SignUpForm = () => {
           className='card-body'
           style={{ color: '#fff' }}
         >
-          <label htmlFor='first_name' className='d-block'>
+          <label
+            htmlFor='first_name'
+            className='d-block'
+            style={{ color: 'black' }}
+          >
             First Name:
           </label>
           <input
@@ -108,7 +112,11 @@ const SignUpForm = () => {
             value={registrationForm.first_name}
             style={{ width: '100%', marginBottom: '5px' }}
           />
-          <label htmlFor='last_name' className='d-block'>
+          <label
+            htmlFor='last_name'
+            className='d-block'
+            style={{ color: 'black' }}
+          >
             Last Name:
           </label>
           <input
@@ -120,7 +128,11 @@ const SignUpForm = () => {
             value={registrationForm.last_name}
             style={{ width: '100%', marginBottom: '5px' }}
           />
-          <label htmlFor='username' className='d-block'>
+          <label
+            htmlFor='username'
+            className='d-block'
+            style={{ color: 'black' }}
+          >
             Username:
           </label>
           <input
@@ -132,7 +144,7 @@ const SignUpForm = () => {
             value={registrationForm.username}
             style={{ width: '100%', marginBottom: '5px' }}
           />
-          <label htmlFor='email' className='d-block'>
+          <label htmlFor='email' className='d-block' style={{ color: 'black' }}>
             Email:
           </label>
           <input
@@ -144,7 +156,11 @@ const SignUpForm = () => {
             value={registrationForm.email}
             style={{ width: '100%', marginBottom: '5px' }}
           />
-          <label htmlFor='password' className='d-block'>
+          <label
+            htmlFor='password'
+            className='d-block'
+            style={{ color: 'black' }}
+          >
             Password:{' '}
           </label>
           <input
@@ -156,7 +172,11 @@ const SignUpForm = () => {
             value={registrationForm.password}
             style={{ width: '100%', marginBottom: '5px' }}
           />
-          <label htmlFor='password_match' className='d-block'>
+          <label
+            htmlFor='password_match'
+            className='d-block'
+            style={{ color: 'black' }}
+          >
             Confirm password:
           </label>
           <input
