@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-// import Contact from './pages/contactPage';
+// import ContactPage from './pages/contactPage';
 // import Login from './pages/loginPage';
-// import HomePageContent from './components/homePageContent';
+import HomePageContent from './components/homePageContent';
 // import SignUp from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
 import './components/App.css';
+import { FormspreeProvider } from '@formspree/react';
 
-function App() {
+function App({ ContactPage, pageProps }) {
   // const [loggedIn, setLoggedIn] = useState(false);
+
+  //eslint-disable-next-line
   const [currentState, setCurrentState] = useState({ ...curRentState });
-  console.log('my state', currentState);
+
   return (
     <Switch>
       <Router>
@@ -38,16 +41,16 @@ function App() {
           <Route
             path='/'
             exact
-            // render={() => (
-            //   <HomePageContent
-            //     title={currentState.home.title}
-            //     text={currentState.home.text}
-            //   />
-            // )}
+            render={() => (
+              <HomePageContent
+                title={currentState.home.title}
+                text={currentState.home.text}
+              />
+            )}
           />
           <Route
             path='/Contact'
-            // render={() => <Contact title={currentState.contact.title} text={currentState.contact.text} />}
+            // render={() => <ContactPage title={currentState.contact.title} text={currentState.contact.text} />}
           />
           <Route
             path='/Sign Up Today!'
