@@ -7,7 +7,7 @@ import HomePageContent from './components/homePageContent';
 // import SignUp from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
 import './components/App.css';
-import { FormspreeProvider } from '@formspree/react';
+// import { FormspreeProvider } from '@formspree/react';
 
 function App({ ContactPage, pageProps }) {
   // const [loggedIn, setLoggedIn] = useState(false);
