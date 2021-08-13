@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import SignUpForm from './signUpPage';
+import axios from 'axios';
 // import UserContent from '../components/userContent';
 
 export default function LoginOut({ loggedIn, setLoggedIn }) {
@@ -19,12 +20,31 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
   };
 
   const handleSubmit = (event) => {
+    const [userName, password] = formData;
     event.preventDefault();
-    if (setLoggedIn(false)) {
-      history.push('/signup');
-    } else {
-      setLoggedIn(true);
-      history.push('/userContent');
+    if (userName && password !== '') {
+      axios
+        .post('http://localhost:5000/login', {
+          data: {
+            userName: userName,
+            password: password,
+          },
+        })
+        .then((response) => {
+          console.log(`statusCode: ${response.statusCode}`);
+          console.log(response);
+          if (response.statusCode !== 200) {
+            alert(response.statusCode);
+            setLoggedIn(false);
+            history.push('/signup');
+          } else {
+            setLoggedIn(true);
+            history.push('/userContent');
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   };
 
