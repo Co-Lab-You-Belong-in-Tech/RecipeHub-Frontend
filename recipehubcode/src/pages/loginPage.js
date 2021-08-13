@@ -21,7 +21,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
 
   const handleSubmit = (event) => {
     //eslint-disable-next-line
-    const [userName, password] = formData;
+    const { userName, password } = formData;
     // event.preventDefault();
     // if (userName && password !== '') {
     //   axios
@@ -47,7 +47,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
     //       console.error(error);
     //     });
     // }
-    setLoggedIn(true);
+    // setLoggedIn(true);
     history.push('/usercontent');
   };
 
