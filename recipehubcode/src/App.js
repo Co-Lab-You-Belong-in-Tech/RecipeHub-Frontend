@@ -8,8 +8,9 @@ import HomePageContent from './components/homePageContent';
 import SignUpForm from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
 import './components/App.css';
+import UserContent from './pages/userContent';
 
-function App({ ContactPage, pageProps }) {
+function App() {
   //eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -17,29 +18,32 @@ function App({ ContactPage, pageProps }) {
   const [currentState, setCurrentState] = useState({ ...curRentState });
 
   return (
-    <Switch>
-      <Router>
-        <Container className='p-0' fluid={true}>
-          <Navbar className='border-bottom' bg='transparent' expand='lg'>
-            <Navbar.Brand>RecipeHub</Navbar.Brand>
-            <Navbar.Toggle className='border-0' aria-controls='navbar-toggle' />
-            <Navbar.Collapse id='navbar-toggle'>
-              <Nav className='ml-auto'>
-                <Link className='nav-link' to='/'>
-                  Home
-                </Link>
-                <Link className='nav-link' to='/contact'>
-                  Contact
-                </Link>
-                <Link className='nav-link' to='/signup'>
-                  Sign Up
-                </Link>
-                <Link className='nav-link' to='/login'>
-                  Login
-                </Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
+    <Router>
+      <Container className='p-0' fluid={true}>
+        <Navbar className='border-bottom' bg='transparent' expand='lg'>
+          <Navbar.Brand>RecipeHub</Navbar.Brand>
+          <Navbar.Toggle className='border-0' aria-controls='navbar-toggle' />
+          <Navbar.Collapse id='navbar-toggle'>
+            <Nav className='ml-auto'>
+              <Link className='nav-link' to='/login'>
+                Home
+              </Link>
+              <Link className='nav-link' to='/contact'>
+                Contact
+              </Link>
+              <Link className='nav-link' to='/signup'>
+                Sign Up
+              </Link>
+              <Link className='nav-link' to='/login'>
+                Login
+              </Link>
+              <Link className='nav-link' to='/usercontent'>
+                userContent
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <Switch>
           <Route
             path='/'
             exact
@@ -57,12 +61,24 @@ function App({ ContactPage, pageProps }) {
           />
           <Route
             path='/login'
-            render={() => <Login title={currentState.login.title} />}
+            render={() => (
+              <Login
+                title={currentState.login.title}
+                setLoggedIn={setLoggedIn}
+                loggedIn={loggedIn}
+              />
+            )}
           />
-          <Footer />
-        </Container>
-      </Router>
-    </Switch>
+          <Route path='/usercontent'>
+            <UserContent />
+          </Route>
+          <Route>
+            <h1>404 Not Found</h1>
+          </Route>
+        </Switch>
+        <Footer />
+      </Container>
+    </Router>
   );
 }
 

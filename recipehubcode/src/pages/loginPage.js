@@ -3,15 +3,15 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import SignUpForm from './signUpPage';
 // import axios from 'axios';
-// import UserContent from '../components/userContent';
+import UserContent from '../pages/userContent';
 
 export default function LoginOut({ loggedIn, setLoggedIn }) {
+  const history = useHistory();
   if (loggedIn) {
     setLoggedIn(false);
   }
   const initialData = { userName: '', password: '' };
   const [formData, setFormData] = useState(initialData);
-  const history = useHistory();
 
   const handleChange = (event) => {
     setFormData(() => {
@@ -22,7 +22,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
   const handleSubmit = (event) => {
     //eslint-disable-next-line
     const [userName, password] = formData;
-    event.preventDefault();
+    // event.preventDefault();
     // if (userName && password !== '') {
     //   axios
     //     .post('http://localhost:5000/login', {
@@ -40,7 +40,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
     //         history.push('/signup');
     //       } else {
     //         setLoggedIn(true);
-    //         history.push('/userContent');
+    //         history.push('/usercontent');
     //       }
     //     })
     //     .catch((error) => {
@@ -48,6 +48,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
     //     });
     // }
     setLoggedIn(true);
+    history.push('/usercontent');
   };
 
   const handleDirect = (event) => {
@@ -88,7 +89,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
                 justifyContent: 'center',
               }}
             >
-              User Name
+              Username:
             </label>
             <input
               name='userName'
@@ -110,7 +111,7 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
                 justifyContent: 'center',
               }}
             >
-              Password
+              Password:
             </label>
             <input
               name='password'
@@ -143,8 +144,8 @@ export default function LoginOut({ loggedIn, setLoggedIn }) {
           Sign Up Here!
         </button>
         <Switch>
-          <Route exact={true} path='/userContent'>
-            {/* <UserContent /> */}
+          <Route exact={true} path='/usercontent'>
+            <UserContent />
           </Route>
           <Route exact={true} path='/signup'>
             <SignUpForm />
