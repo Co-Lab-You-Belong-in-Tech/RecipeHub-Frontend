@@ -27,7 +27,7 @@ const formValid = ({ formErrors, ...rest }) => {
   return valid;
 };
 
-class ContactPage extends React.Component {
+class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,10 +84,10 @@ class ContactPage extends React.Component {
       };
 
       emailjs.send(
-        'service_8w6ebcg',
-        'template_v0aj68g',
+        'service_hjj2t1r',
+        'template_pa2wtq4',
         templateParams,
-        'user_MI3kmfd8ar1V9pRIZSkiR'
+        'user_zibmNwgfeEmzR6T68cLBN'
       );
 
       console.log(`
@@ -230,4 +230,4 @@ class ContactPage extends React.Component {
   }
 }
 
-export default ContactPage;
+export default ContactForm;

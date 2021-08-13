@@ -8,7 +8,6 @@ import HomePageContent from './components/homePageContent';
 import SignUpForm from './pages/signUpPage';
 import { curRentState } from './assets/pageTitles';
 import './components/App.css';
-import { FormspreeProvider } from '@formspree/react';
 
 function App({ ContactPage, pageProps }) {
   //eslint-disable-next-line
@@ -51,14 +50,7 @@ function App({ ContactPage, pageProps }) {
               />
             )}
           />
-          <Route
-            path='/contact'
-            render={() => (
-              <FormspreeProvider project='{your-project-id}'>
-                <ContactForm {...pageProps} />
-              </FormspreeProvider>
-            )}
-          />
+          <Route path='/contact' render={() => <ContactForm />} />
           <Route
             path='/signup'
             render={() => <SignUpForm title={currentState.signup.title} />}
