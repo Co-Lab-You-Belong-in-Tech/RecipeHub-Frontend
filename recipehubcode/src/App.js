@@ -37,9 +37,6 @@ function App() {
               <Link className='nav-link' to='/login'>
                 Login
               </Link>
-              <Link className='nav-link' to='/usercontent'>
-                userContent
-              </Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
